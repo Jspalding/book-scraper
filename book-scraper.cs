@@ -20,15 +20,32 @@ namespace BookScraper
 
             foreach (var bookElement in bookHTMLElements)
             {
-                var title = HtmlEntity.DeEntitize(bookElement.QuerySelector(".bookTitle").InnerText);
-                Console.WriteLine($"{title}");
+                Book currentBook = new()
+                {
+                    Title = HtmlEntity.DeEntitize(bookElement.QuerySelector(".bookTitle").InnerText),
+                    AuthorFullName = HtmlEntity.DeEntitize(bookElement.QuerySelector(".authorName").InnerText),
+                    Url = HtmlEntity.DeEntitize(bookElement.QuerySelector(".bookTItle").Attributes["href"].Value)
+                };
 
-                var author = HtmlEntity.DeEntitize(bookElement.QuerySelector(".authorName").InnerText);
-                Console.WriteLine($"by {author}");
+                fantasyBooks.Add(currentBook);
 
-                var url = HtmlEntity.DeEntitize(bookElement.QuerySelector(".bookTItle").Attributes["href"].Value);
-                Console.WriteLine($"{url}");
+                Console.WriteLine($"{currentBook.Title}");
+                Console.WriteLine($"by {currentBook.AuthorFullName}");
+                Console.WriteLine($"{currentBook.Url}");
             }
+
+            Console.WriteLine($"{fantasyBooks.Count}");
+
+
+            // HtmlWeb currentBookPage = new();
+            // var currentBookDoc = web.Load($"{baseUrl}{url}");
+            // var currentBookPageElement = currentBookDoc.DocumentNode.QuerySelectorAll(".BookPage__mainContent");
+
+            // foreach (var mainContent in currentBookPageElement)
+            // {
+            //     var pageCount = HtmlEntity.DeEntitize(mainContent.QuerySelector(".pagesFormat").InnerText);
+            //     Console.WriteLine($"{pageCount}");
+            // }
 
 
         }
