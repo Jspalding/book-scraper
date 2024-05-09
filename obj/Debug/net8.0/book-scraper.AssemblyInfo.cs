@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("book-scraper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+567362e45861a87d1a292ff40c4e4f1c829e6f4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c792038f66c0de67ae9834dea32533fbaf38043c")]
 [assembly: System.Reflection.AssemblyProductAttribute("book-scraper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("book-scraper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
